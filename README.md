@@ -1,9 +1,4 @@
-
-
 # MyWorld
-
-## About Eloque
-*# MyWorld
 My World is an android application where you get to learn about the countries of the world - capitals, populations, languages, religions, flags &amp; more. You can also test your knowledge of world geography with quiz mode.
 
 ## Author
