@@ -6,25 +6,25 @@ import android.widget.ArrayAdapter;
 public class AfricaArrayAdapter extends ArrayAdapter {
 
     private Context mContext;
-    private String[] mRestaurants;
-    private String[] mCuisines;
+    private String[] mAfrica;
+    private String[] mAfricanCountries;
 
-    public AfricaArrayAdapter (Context mContext, int resource, String[] mRestaurants, String[] mCuisines){
+    public AfricaArrayAdapter (Context mContext, int resource, String[] mRestaurants, String[] mAfricanCountries){
         super(mContext, resource);
         this.mContext = mContext;
-        this.mCuisines = mCuisines;
-        this.mRestaurants = mRestaurants;
+        this.mAfricanCountries = mAfricanCountries;
+        this.mAfrica = mRestaurants;
     }
 
     @Override
     public Object getItem(int position){
-        String restaurant = mRestaurants[position];
-        String cuisine = mCuisines[position];
-        return String.format("%s \n Capital City is %s", restaurant, cuisine);
+        String africa = mAfrica[position];
+        String country = mAfricanCountries[position];
+        return String.format("%s \n Capital City is %s", africa, country);
     }
 
     @Override
     public int getCount(){
-        return mRestaurants.length;
+        return mAfrica.length;
     }
 }

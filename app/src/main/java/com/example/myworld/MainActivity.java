@@ -21,8 +21,9 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
-    @BindView(R.id.bt_click_me) Button mFindRestaurantsButton;
+    @BindView(R.id.bt_click_me) Button mAfricanButton;
     @BindView(R.id.textView3) TextView mAppNameTextView;
+
 
 
     @Override
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         Typeface caviarFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
         mAppNameTextView.setTypeface(caviarFont);
-        mFindRestaurantsButton.setOnClickListener(new View.OnClickListener(){
+        mAfricanButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, AfricaActivity.class);
