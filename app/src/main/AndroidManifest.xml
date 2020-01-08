@@ -25,8 +25,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityLogin"/>
-        <activity android:name=".ListCountry" />
         <activity android:name=".ViewCountry"></activity>
+        <activity android:name=".ListCountry" />
+
     </application>
 
 </manifest>

@@ -24,6 +24,9 @@ public class Country {
     protected static CountryType[] data;
     private final Gson gson = new Gson();
 
+
+
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public Map<String, ArrayList<CountryType>> run(String region) throws Exception {
         Request request = new Request.Builder()
@@ -96,6 +99,8 @@ public class Country {
 
         return region;
     }
+
+
 
     static class CountryType {
         String name;

@@ -1,5 +1,6 @@
 package com.example.myworld;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 
 public class ViewCountry extends AppCompatActivity {
     TextView textView;
@@ -15,6 +18,30 @@ public class ViewCountry extends AppCompatActivity {
     TextView textViewCapital;
     TextView textViewRegion;
     ImageView imageViewFlag;
+
+
+    private ArrayList<NewCountry> NewCountry = new ArrayList<>();
+    private Context mContext;
+
+
+    public ViewCountry(Context context, ArrayList<NewCountry> countries){
+        mContext = context;
+        NewCountry =countries;
+    }
+    Intent intent = getIntent();
+    String countryName = intent.getStringExtra("countryName");
+    String countryRegion = intent.getStringExtra("countryRegion");
+    String countryCapital = intent.getStringExtra("countryCapital");
+    String countryPopulation = intent.getStringExtra("countryPopulation");
+
+
+    public void bindCountry(NewCountry newCountry){
+        textView.setText("Country Name:" + countryName);
+        textViewRegion.setText("Continent: " + countryRegion);
+        textViewPopulation.setText("Population: " + countryPopulation + " inhabitants");
+        textViewCapital.setText("Capital: " + countryCapital);
+        Picasso.get().load(newCountry.getImageUrl()).into(imageViewFlag);
+    }
 
 
     @Override
@@ -27,17 +54,9 @@ public class ViewCountry extends AppCompatActivity {
         textViewCapital= (TextView) findViewById(R.id.viewCountryTextViewCapital);
         imageViewFlag= (ImageView) findViewById(R.id.flagImageView);
 
-        Intent intent = getIntent();
-        String countryName = intent.getStringExtra("countryName");
-        String countryRegion = intent.getStringExtra("countryRegion");
-        String countryCapital = intent.getStringExtra("countryCapital");
-        String countryPopulation = intent.getStringExtra("countryPopulation");
 
-        textView.setText("Country Name:" + countryName);
-        textViewRegion.setText("Continent: " + countryRegion);
-        textViewPopulation.setText("Population: " + countryPopulation + " inhabitants");
-        textViewCapital.setText("Capital: " + countryCapital);
-      //  Picasso.get().load(country.getImageUrl()).into(imageViewFlag);
+
+
 
 
 
