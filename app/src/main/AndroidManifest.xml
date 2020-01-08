@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myworld">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/world"
@@ -9,11 +12,12 @@
         android:roundIcon="@drawable/world"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AfricaActivity"></activity>
 
-        <activity
-            android:theme="@style/SplashTheme"
-            android:name=".ActivitySplash">
+        <activity android:name=".MainActivity"></activity>
+
+            <activity
+                android:theme="@style/SplashTheme"
+                android:name=".ActivitySplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +25,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityLogin"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".ListCountry" />
+        <activity android:name=".ViewCountry"></activity>
     </application>
 
 </manifest>
